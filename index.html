@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Seenbright is a creative digital marketing agency helping ambitious brands grow through strategy, creativity and innovation.">
+  <title>Seenbright | See Beyond. Grow Brighter.</title>
+
+  <style>
+    :root {
+      --navy: #1E2A44;
+      --blue: #306BCF;
+      --sky: #DCE7F8;
+      --white: #FFFFFF;
+      --sand: #E3D3BD;
+      --coffee: #7A5A43;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--navy);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.97);
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
+      font-size: 23px;
+      font-weight: bold;
+    }
+
+    .star {
+      font-size: 35px;
+      color: var(--blue);
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 85vh;
+      background: linear-gradient(135deg, var(--navy), #294D88);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 100px 10%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "✦";
+      position: absolute;
+      font-size: 450px;
+      right: -80px;
+      top: 0;
+      color: rgba(255,255,255,0.05);
+    }
+
+    .hero-content {
+      max-width: 750px;
+      z-index: 2;
+    }
+
+    .tagline {
+      color: var(--sand);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: clamp(45px, 6vw, 85px);
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+
+    h1 span {
+      color: #82B1FF;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 600px;
+      margin-bottom: 35px;
+      color: #E2EAF8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 32px;
+      background: var(--blue);
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #2055AD;
+      transform: translateY(-3px);
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--navy);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 110px 10%;
+    }
+
+    .section-label {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    .section-description {
+      max-width: 650px;
+      color: #637087;
+      margin-bottom: 50px;
+      font-size: 17px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-visual {
+      background: var(--sky);
+      min-height: 400px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 180px;
+      color: var(--blue);
+    }
+
+    .about-text p {
+      margin-bottom: 20px;
+      color: #637087;
+    }
+
+    /* SERVICES */
+
+    .services {
+      background: #F7F9FD;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      border: 1px solid #E5EAF3;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(30,42,68,0.08);
+    }
+
+    .service-icon {
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: #637087;
+      font-size: 15px;
+    }
+
+    /* APPROACH */
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .step {
+      border-top: 3px solid var(--blue);
+      padding-top: 25px;
+    }
+
+    .step-number {
+      font-size: 45px;
+      font-weight: bold;
+      color: var(--sky);
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      margin-bottom: 12px;
+    }
+
+    .step p {
+      color: #637087;
+      font-size: 15px;
+    }
+
+    /* VALUES */
+
+    .values {
+      background: var(--sky);
+      text-align: center;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .value {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    .value h3 {
+      color: var(--blue);
+      margin-bottom: 15px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .contact p {
+      color: #CBD8EC;
+      max-width: 600px;
+      margin: 0 auto 35px;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 40px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 15px;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    button {
+      padding: 17px;
+      border: none;
+      background: var(--blue);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2055AD;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #131D30;
+      color: #AAB8D0;
+      padding: 35px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    /* ANIMATIONS */
+
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .services-grid,
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+      }
+
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      section {
+        padding: 70px 7%;
+      }
+
+      .hero {
+        padding: 80px 7%;
+      }
+
+      .services-grid,
+      .values-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        min-height: 250px;
+        font-size: 120px;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <a href="#home" class="logo">
+      <span class="star">✦</span>
+      seenbright.com
+    </a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Our Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+
+  <div class="hero" id="home">
+    <div class="hero-content fade-in">
+      <div class="tagline">Your Digital Growth Partner</div>
+
+      <h1>
+        See Beyond.<br>
+        <span>Grow Brighter.</span>
+      </h1>
+
+      <p>
+        We help ambitious brands navigate the digital world
+        through creative strategies, meaningful experiences
+        and measurable results.
+      </p>
+
+      <a href="#services" class="btn">
+        Explore Our Services →
+      </a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+
+  <section class="about" id="about">
+
+    <div class="about-visual">
+      ✦
+    </div>
+
+    <div class="about-text">
+      <div class="section-label">Who We Are</div>
+
+      <h2>
+        Guiding Brands Towards a Brighter Future.
+      </h2>
+
+      <p>
+        Seenbright is a forward-thinking digital marketing agency
+        dedicated to helping businesses stand out in an
+        increasingly competitive digital landscape.
+      </p>
+
+      <p>
+        Just like our four-pointed star, which has guided
+        travellers for centuries, we guide brands through
+        the complexities of digital transformation.
+      </p>
+
+      <p>
+        We combine creativity, technology and data-driven
+        insights to turn ambitious ideas into powerful
+        digital experiences.
+      </p>
+
+      <a href="#contact" class="btn">
+        Work With Us →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section class="services" id="services">
+
+    <div class="section-label">What We Do</div>
+
+    <h2>Our Digital Expertise.</h2>
+
+    <p class="section-description">
+      From strategy to execution, we provide the tools
+      and expertise brands need to thrive online.
+    </p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Digital Strategy</h3>
+        <p>
+          We develop tailored digital strategies
+          that align with your business objectives
+          and create sustainable growth.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🔎</div>
+        <h3>SEO & SEM</h3>
+        <p>
+          Improve your visibility on search engines
+          and connect with customers actively
+          searching for your products.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Social Media Marketing</h3>
+        <p>
+          Build engaged communities and create
+          meaningful connections through
+          impactful social media campaigns.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3>Brand Identity</h3>
+        <p>
+          Create a distinctive brand identity
+          that communicates your values
+          and resonates with your audience.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Paid Advertising</h3>
+        <p>
+          Reach the right people at the right
+          time through targeted and
+          performance-driven advertising.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Web Design & UX</h3>
+        <p>
+          Design intuitive, beautiful and
+          conversion-focused digital experiences
+          that turn visitors into customers.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- APPROACH -->
+
+  <section id="approach">
+
+    <div class="section-label">How We Work</div>
+
+    <h2>Our Approach.</h2>
+
+    <p class="section-description">
+      A structured process designed to transform
+      insights into meaningful business results.
+    </p>
+
+    <div class="approach-grid">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Discover</h3>
+        <p>
+          We analyse your brand, audience,
+          competitors and market opportunities.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Strategise</h3>
+        <p>
+          We develop a clear roadmap with
+          measurable goals and relevant KPIs.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Create</h3>
+        <p>
+          We bring ideas to life through
+          creative content and digital campaigns.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Optimise</h3>
+        <p>
+          We monitor performance, analyse
+          results and continuously improve.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- VALUES -->
+
+  <section class="values">
+
+    <div class="section-label">What Drives Us</div>
+
+    <h2>Our Core Values.</h2>
+
+    <div class="values-grid">
+
+      <div class="value">
+        <h3>Creativity</h3>
+        <p>
+          We believe original ideas
+          create extraordinary opportunities.
+        </p>
+      </div>
+
+      <div class="value">
+        <h3>Innovation</h3>
+        <p>
+          We embrace emerging technologies
+          and constantly explore new possibilities.
+        </p>
+      </div>
+
+      <div class="value">
+        <h3>Transparency</h3>
+        <p>
+          We build strong relationships
+          through trust, honesty and measurable results.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-label" style="color:#82B1FF">
+      Let's Connect
+    </div>
+
+    <h2>Ready to Grow Brighter?</h2>
+
+    <p>
+      Every great digital journey starts with a conversation.
+      Tell us about your ambitions and let's explore
+      what we can achieve together.
+    </p>
+
+    <form class="contact-form" id="contactForm">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Your Name"
+        required
+      >
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Your Email"
+        required
+      >
+
+      <input
+        type="text"
+        id="company"
+        placeholder="Company Name"
+      >
+
+      <textarea
+        id="message"
+        placeholder="Tell us about your project..."
+        required
+      ></textarea>
+
+      <button type="submit">
+        Send Your Message →
+      </button>
+
+      <p id="formStatus" aria-live="polite" style="font-size:14px;margin:10px 0 0;"></p>
+
+    </form>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div>
+      <strong>✦ seenbright.com</strong>
+      <br>
+      See Beyond. Grow Brighter.
+    </div>
+
+    <div>
+      © 2026 Seenbright. All Rights Reserved.
+      <br>
+      Digital Marketing Agency
+    </div>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+    document.getElementById("contactForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const company = document.getElementById("company").value;
+        const message = document.getElementById("message").value;
+
+        const subject = encodeURIComponent(
+          "Seenbright Project Inquiry"
+        );
+
+        const body = encodeURIComponent(
+          "Name: " + name + "\n" +
+          "Email: " + email + "\n" +
+          "Company: " + company + "\n\n" +
+          "Message:\n" + message
+        );
+
+        const status = document.getElementById("formStatus");
+
+        status.textContent =
+          "Please send your message using your email application.";
+
+        window.location.href =
+          "mailto:contact@seenbright.com?subject=" +
+          subject + "&body=" + body;
+
+      });
+  </script>
+
+</body>
+</html>
